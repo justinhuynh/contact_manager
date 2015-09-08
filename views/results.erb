@@ -1,0 +1,13 @@
+<h1>Search Results</h1>
+
+<a href="/?page=<%= page - 1 %>">Previous Page</a> <%= page %> <a href="/?page=<%= page + 1 %>">Next Page</a>
+
+<%= @contacts.count %> matches found.
+
+<ul>
+  <% @contacts.each do |contact| %>
+    <li><a href='/contacts/<%= contact.id %>' %><%= contact.name %></a> - <%= contact.phone_number %></li>
+  <% end %>
+</ul>
+
+<a href='/'>Back to List</a>

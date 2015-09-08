@@ -1,7 +1,23 @@
 <h1>Contacts</h1>
 
+<a href="/?page=<%= page - 1 %>">Previous Page</a> <%= page %> <a href="/?page=<%= page + 1 %>">Next Page</a>
+
+<form action="/page" method="POST">
+  <label for="page">Page: </label>
+  <input type="number" min="1" name="page" id="page" required>
+  <input type="submit">
+</form>
+
+<form action="/search" method="POST">
+  <label for="search">Search: </label>
+  <input type="text" name="search" id="search" required>
+  <input type="submit">
+</form>
+
 <ul>
   <% @contacts.each do |contact| %>
-    <li><%= contact.name %> - <%= contact.phone_number %></li>
+    <li><a href='/contacts/<%= contact.id %>' %><%= contact.name %></a> - <%= contact.phone_number %></li>
   <% end %>
 </ul>
+
+<a href="/add_contact">Add New Contact</a>

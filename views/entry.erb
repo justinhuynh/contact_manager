@@ -1,0 +1,13 @@
+<h1>Add New Contact</h1>
+
+<form action="/add_contact" method="POST">
+  <label for="first_name">First Name: </label>
+  <input type="text" id="first_name" name="first_name" required>
+  <label for="last_name">Last Name: </label>
+  <input type="text" id="last_name" name="last_name" required>
+  <label for="phone_number">Phone Number (10 digits): </label>
+  <input type="text" id="phone_number" name="phone_number" pattern="^\d{10}$" title="Please match the format XXXXXXXXX (digits only)" required>
+  <input type="submit">
+</form>
+
+<a href='/'>Back to List</a>
